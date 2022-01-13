@@ -5,11 +5,13 @@ import WeatherInfo from "./components/WeatherInfo";
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 function App() {
-  let city = "Abuja";
+  const city = "Port Harcourt";
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+
   const [name, setName] = useState("");
   const [temp, setTemp] = useState("");
   const [desc, setDesc] = useState("");
+  const [time, setTime] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,7 +21,7 @@ function App() {
         const data = await response.json();
         const { name, main, weather } = data;
         setName(name);
-        setTemp(main.temp);
+        setTemp(`${main.temp}°`);
         setDesc(weather[0].description.toUpperCase());
       } catch (error) {
         alert(error.message);
@@ -32,10 +34,16 @@ function App() {
     fetchData();
   }, [API_URL]);
 
+  // Update time after every sec.. wow!
+  setTimeout(() => {
+    const time = new Date().toLocaleTimeString();
+    setTime(time);
+  }, 1000);
+
   return (
     <div className="App">
       <Header title="Kairos" />
-      <WeatherInfo name={name} temp={temp} desc={desc} />
+      <WeatherInfo name={name} temp={temp} desc={desc} time={time} />
     </div>
   );
 }
