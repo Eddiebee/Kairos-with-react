@@ -18,7 +18,9 @@ function App() {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${
+            latitude || 0
+          }&lon=${longitude || 1}&appid=${API_KEY}`
         );
         if (!response.ok) throw Error("Did not receive expected data.");
         const data = await response.json();
@@ -50,9 +52,6 @@ function App() {
     <div className="App">
       <Header title="Kairos" />
       <WeatherInfo name={name} temp={temp} desc={desc} time={time} />
-      <code>
-        latitude: {latitude} longitude: {longitude}
-      </code>
     </div>
   );
 }
