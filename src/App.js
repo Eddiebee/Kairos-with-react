@@ -49,7 +49,7 @@ function App() {
   });
 
   return (
-    <div className="App">
+    <div className="cnt">
       <Header title="Kairos" />
       <WeatherInfo name={name} temp={temp} desc={desc} time={time} />
     </div>

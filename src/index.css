@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #ff873f;
+  --secondary-color: #0587f84b;
+  --tertiary-color: #0588f8;
+  --main-font: "Karla", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,17 +12,13 @@
 }
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  width: 100%;
+  background: url("images/kairos-bg.jpg") no-repeat;
+  background-size: cover;
+  font-family: var(--main-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  overflow: hidden;
 }
 
 header {
@@ -24,3 +27,91 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
+header > nav > svg {
+  color: var(--tertiary-color);
+  font-size: 2rem;
+  padding: 5px;
+  outline: none;
+}
+
+header > nav > svg:hover {
+  outline: 2px solid #ff893f38;
+  border-radius: 5px;
+}
+
+.cnt {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #d1e4ffe0;
+  justify-content: center;
+  justify-items: center;
+}
+
+#time {
+  width: 100%;
+  height: 20px;
+  font-family: var(--main-font);
+  color: var(--tertiary-color);
+}
+
+.city {
+  max-width: 20rem;
+  font-family: var(--main-font);
+  font-weight: 800;
+  font-size: 3em;
+  color: var(--tertiary-color);
+}
+
+.degree {
+  font-size: 5em;
+  font-family: var(--main-font);
+  color: var(--tertiary-color);
+}
+
+.desc {
+  color: #ff873f;
+  font-family: var(--main-font);
+  font-size: 2.5em;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+
+.brand {
+  text-decoration: none;
+  font-family: var(--main-font);
+  cursor: pointer;
+}
+
+.primary {
+  color: var(--primary-color);
+}
+
+.secondary {
+  color: var(--secondary-color);
+}
+
+.brand:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* .right-aside {
+  position: absolute;
+  right: -62px;
+  opacity: 0.5;
+}
+
+.left-aside {
+  position: absolute;
+  left: -50px;
+  bottom: -10px;
+  opacity: 0.4;
+}
+
+.left-aside > svg,
+.right-aside > svg {
+  width: 100px;
+  height: 100px;
+} */
