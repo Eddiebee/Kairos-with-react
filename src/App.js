@@ -9,6 +9,7 @@ function App() {
   const [name, setName] = useState("");
   const [temp, setTemp] = useState("");
   const [desc, setDesc] = useState("");
+  const [weatherIcon, setWeatherIcon] = useState("");
   const [time, setTime] = useState("");
 
   // useGeolocation Hook
@@ -28,6 +29,7 @@ function App() {
         setName(name);
         setTemp(`${main.temp}°`);
         setDesc(weather[0].description.toUpperCase());
+        setWeatherIcon(weather[0].icon);
       } catch (error) {
         alert(error.message);
         console.log(error.message);
@@ -51,7 +53,13 @@ function App() {
   return (
     <div className="cnt">
       <Header title="Kairos" />
-      <WeatherInfo name={name} temp={temp} desc={desc} time={time} />
+      <WeatherInfo
+        name={name}
+        temp={temp}
+        desc={desc}
+        time={time}
+        icon={weatherIcon}
+      />
     </div>
   );
 }
