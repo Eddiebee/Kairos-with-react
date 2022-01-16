@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import { useGeolocation } from "react-recipes";
 import Header from "./components/Header";
 import WeatherInfo from "./components/WeatherInfo";
+import WEATHER_API_KEY from "./api_key";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+const API_KEY = WEATHER_API_KEY;
 
 function App() {
   const [name, setName] = useState("");
