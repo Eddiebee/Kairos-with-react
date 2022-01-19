@@ -4,7 +4,7 @@ import Header from "./Header";
 import WeatherInfo from "./WeatherInfo";
 import WEATHER_API_KEY from "./api_key"; // for deployment build only
 
-// let WEATHER_API_KEY = ""; for working on my machine
+// let WEATHER_API_KEY = ""; // for working on my machine
 
 const API_KEY = WEATHER_API_KEY || process.env.REACT_APP_API_KEY;
 
@@ -16,7 +16,11 @@ function WeatherApp() {
   const [time, setTime] = useState("");
 
   // useGeolocation Hook
-  const { latitude, longitude } = useGeolocation(true);
+  const { latitude, longitude } = useGeolocation({
+    enableHighAccuracy: true,
+    maximumAge: 15000,
+    timeout: 12000,
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,7 +39,6 @@ function WeatherApp() {
         setWeatherIcon(weather[0].icon);
       } catch (error) {
         alert(error.message);
-        console.log(error.message);
       } finally {
         // ...
       }

@@ -1,5 +1,268 @@
-:root{--primary-color:#ff873f;--secondary-color:#0587f84b;--tertiary-color:#0588f8;--main-font:"Karla",sans-serif}*{margin:0;padding:0;box-sizing:border-box}body{width:100%;background:url("images/kairos-bg.jpg") no-repeat;background-size:cover;font-family:var(--main-font);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow:hidden}header{display:flex;width:100%;justify-content:space-between;align-items:center}header>nav>svg{color:var(--tertiary-color);font-size:2rem;padding:5px;outline:none}header>nav>svg:hover{outline:2px solid #ff893f38;border-radius:5px}.cnt{display:flex;flex-direction:column;height:100vh;background-color:#d1e4ffe0;justify-content:center;justify-items:center}.wrapper{display:flex;flex-direction:row;justify-content:space-between}#time{width:100%;height:20px;font-family:var(--main-font);color:var(--tertiary-color)}.city{max-width:20rem;font-family:var(--main-font);font-weight:800;font-size:3em;color:var(--tertiary-color)}.degree{font-size:4em;font-family:var(--main-font);color:var(--tertiary-color)}
-.desc{color:#ff873f;font-family:var(--main-font);font-size:2em;font-weight:500;line-height:1.2em}.brand{text-decoration:none;font-family:var(--main-font);cursor:pointer}.primary{color:var(--primary-color)}.secondary{color:var(--secondary-color)}.brand:hover{color:var(--secondary-color);text-decoration:underline}#icon{margin-left:-5rem;color:#ff893fd8}.icon-cnt{display:flex}@font-face{font-family:OpenWeatherIcons;src:url("./fonts/OpenWeatherIcons.eot");src:url("./fonts/OpenWeatherIcons.eot?#iefix") format("embedded-opentype"),url("./fonts/OpenWeatherIcons.woff2") format("woff2"),url("./fonts/OpenWeatherIcons.woff") format("woff"),url("./fonts/OpenWeatherIcons.ttf") format("truetype"),url("./fonts/OpenWeatherIcons.svg#OpenWeatherIcons") format("svg");font-style:normal;font-weight:400}.owi{display:inline-block;transform:translate(0,0);text-rendering:auto;font:normal normal 400 14px/1 OpenWeatherIcons;font-size:inherit;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}.owi-lg{vertical-align:-15%;line-height:.75em;font-size:1.33333333em}.owi-10x{font-size:10em}
-.owi-7x{font-size:7em}.owi-fw{width:1.28571429em;text-align:center}.owi-01d:before{content:"\ea01"}.owi-01n:before{content:"\ea02"}.owi-02d:before{content:"\ea04"}.owi-02n:before{content:"\ea03"}.owi-03d:before{content:"\ea05"}.owi-03n:before{content:"\ea06"}.owi-04d:before{content:"\ea07"}.owi-04n:before{content:"\ea08"}.owi-09d:before{content:"\ea09"}.owi-09n:before{content:"\ea0a"}.owi-10d:before{content:"\ea0b"}.owi-10n:before{content:"\ea0c"}.owi-11d:before{content:"\ea0d"}.owi-11n:before{content:"\ea0e"}.owi-1232n:before{content:"\ea0f"}.owi-13d:before{content:"\ea10"}.owi-13n:before{content:"\ea12"}.owi-50d:before{content:"\ea11"}.owi-50n:before{content:"\ea13"}.heartbeat{-webkit-animation:heartbeat 3.5s ease-in-out infinite both;animation:heartbeat 3.5s ease-in-out infinite both}@-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}
-10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}
-33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
+:root {
+  --primary-color: #ff873f;
+  --secondary-color: #0587f84b;
+  --tertiary-color: #0588f8;
+  --main-font: "Karla", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  background: url("images/kairos-bg.jpg") no-repeat;
+  background-size: cover;
+  font-family: var(--main-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+header > nav > svg {
+  color: var(--tertiary-color);
+  font-size: 2rem;
+  padding: 5px;
+  outline: none;
+}
+header > nav > svg:hover {
+  outline: 2px solid #ff893f38;
+  border-radius: 5px;
+}
+.cnt {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #d1e4ffe0;
+  justify-content: center;
+  justify-items: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#time {
+  width: 100%;
+  height: 20px;
+  font-family: var(--main-font);
+  color: var(--tertiary-color);
+}
+.city {
+  max-width: 20rem;
+  font-family: var(--main-font);
+  font-weight: 800;
+  font-size: 3em;
+  color: var(--tertiary-color);
+}
+.degree {
+  font-size: 4em;
+  font-family: var(--main-font);
+  color: var(--tertiary-color);
+}
+.desc {
+  color: #ff873f;
+  font-family: var(--main-font);
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1.2em;
+}
+.brand {
+  text-decoration: none;
+  font-family: var(--main-font);
+  cursor: pointer;
+}
+.primary {
+  color: var(--primary-color);
+}
+.secondary {
+  color: var(--secondary-color);
+}
+.brand:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+#icon {
+  margin-left: -5rem;
+  color: #ff893fd8;
+}
+.icon-cnt {
+  display: flex;
+}
+@font-face {
+  font-family: OpenWeatherIcons;
+  src: url("./fonts/OpenWeatherIcons.eot");
+  src: url("./fonts/OpenWeatherIcons.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/OpenWeatherIcons.woff2") format("woff2"),
+    url("./fonts/OpenWeatherIcons.woff") format("woff"),
+    url("./fonts/OpenWeatherIcons.ttf") format("truetype"),
+    url("./fonts/OpenWeatherIcons.svg#OpenWeatherIcons") format("svg");
+  font-style: normal;
+  font-weight: 400;
+}
+.owi {
+  display: inline-block;
+  transform: translate(0, 0);
+  text-rendering: auto;
+  font: normal normal 400 14px/1 OpenWeatherIcons;
+  font-size: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+.owi-lg {
+  vertical-align: -15%;
+  line-height: 0.75em;
+  font-size: 1.33333333em;
+}
+.owi-10x {
+  font-size: 10em;
+}
+.owi-7x {
+  font-size: 7em;
+}
+.owi-fw {
+  width: 1.28571429em;
+  text-align: center;
+}
+.owi-01d:before {
+  content: "\ea01";
+}
+.owi-01n:before {
+  content: "\ea02";
+}
+.owi-02d:before {
+  content: "\ea04";
+}
+.owi-02n:before {
+  content: "\ea03";
+}
+.owi-03d:before {
+  content: "\ea05";
+}
+.owi-03n:before {
+  content: "\ea06";
+}
+.owi-04d:before {
+  content: "\ea07";
+}
+.owi-04n:before {
+  content: "\ea08";
+}
+.owi-09d:before {
+  content: "\ea09";
+}
+.owi-09n:before {
+  content: "\ea0a";
+}
+.owi-10d:before {
+  content: "\ea0b";
+}
+.owi-10n:before {
+  content: "\ea0c";
+}
+.owi-11d:before {
+  content: "\ea0d";
+}
+.owi-11n:before {
+  content: "\ea0e";
+}
+.owi-1232n:before {
+  content: "\ea0f";
+}
+.owi-13d:before {
+  content: "\ea10";
+}
+.owi-13n:before {
+  content: "\ea12";
+}
+.owi-50d:before {
+  content: "\ea11";
+}
+.owi-50n:before {
+  content: "\ea13";
+}
+.heartbeat {
+  -webkit-animation: heartbeat 3.5s ease-in-out infinite both;
+  animation: heartbeat 3.5s ease-in-out infinite both;
+}
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+    transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+/* media queries */
+@media screen and (min-width: 768px) {
+  .wrapper {
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
