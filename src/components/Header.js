@@ -1,9 +1,9 @@
 import Nav from "./Nav";
 
-const Header = ({ title }) => {
+const Header = ({ title, search, setSearch }) => {
   return (
     <header>
-      <Nav title={title} />
+      <Nav title={title} search={search} setSearch={setSearch} />
     </header>
   );
 };
