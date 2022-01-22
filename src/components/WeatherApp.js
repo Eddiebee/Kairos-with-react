@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useGeolocation } from "react-recipes";
 import Header from "./Header";
 import WeatherInfo from "./WeatherInfo";
-// import WEATHER_API_KEY from "./api_key"; // for deployment build only
+import WEATHER_API_KEY from "./api_key"; // for deployment build only
 
-let WEATHER_API_KEY = ""; // for working on my machine
+// let WEATHER_API_KEY = ""; // for working on my machine
 
 const API_KEY = WEATHER_API_KEY || process.env.REACT_APP_API_KEY;
 
