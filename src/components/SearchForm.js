@@ -8,8 +8,13 @@ const SearchForm = ({ setSearch }) => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <input type="search" placeholder="Search city" name="search" />
-      <button type="submit">
+      <input
+        type="text"
+        placeholder="Search city"
+        name="search"
+        className="searchInput"
+      />
+      <button type="submit" className="searchBtn">
         <FaSearchLocation role="button" tabIndex="0" />
       </button>
     </form>
