@@ -13,8 +13,7 @@ function WeatherApp() {
   const [temp, setTemp] = useState("");
   const [desc, setDesc] = useState("");
   const [weatherIcon, setWeatherIcon] = useState("");
-
-  const city = "Abuja";
+  const [searchCity, setSearchCity] = useState("");
 
   // useGeolocation Hook
   const { latitude, longitude } = useGeolocation({
@@ -23,14 +22,15 @@ function WeatherApp() {
     timeout: 12000,
   });
 
+  const urlWithLatLon = `https://api.openweathermap.org/data/2.5/weather?lat=${
+      latitude || 0
+    }&lon=${longitude || 1}&units=metric&appid=${API_KEY}`,
+    urlWithCity = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=metric&appid=${API_KEY}`;
+
   useEffect(() => {
     const fetchData = async () => {
-      const urlWithLatLon = `https://api.openweathermap.org/data/2.5/weather?lat=${
-          latitude || 0
-        }&lon=${longitude || 1}&units=metric&appid=${API_KEY}`,
-        urlWithCity = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`;
       try {
-        const response = await fetch(city ? urlWithCity : urlWithLatLon);
+        const response = await fetch(searchCity ? urlWithCity : urlWithLatLon);
         if (!response.ok) throw Error("Did not receive expected data.");
         const data = await response.json();
         const { name, main, weather } = data;
@@ -47,11 +47,11 @@ function WeatherApp() {
     };
 
     fetchData();
-  }, [latitude, longitude]);
+  }, [searchCity, urlWithCity, urlWithLatLon]);
 
   return (
     <div>
-      <Header title="Kairos" />
+      <Header title="Kairos" search={searchCity} setSearch={setSearchCity} />
       <WeatherInfo name={name} temp={temp} desc={desc} icon={weatherIcon} />
     </div>
   );
