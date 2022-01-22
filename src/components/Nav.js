@@ -1,12 +1,12 @@
-import { AiOutlineMenu } from "react-icons/ai";
+import SearchForm from "./SearchForm";
 
-const Nav = ({ title }) => {
+const Nav = ({ title, setSearch }) => {
   return (
     <nav className="container-fluid navbar navbar-light bg-light fixed-top">
       <a className="secondary brand fs-1" href="/">
         {title}
       </a>
-      <AiOutlineMenu role="button" tabIndex="0" />
+      <SearchForm setSearch={setSearch} />
     </nav>
   );
 };
