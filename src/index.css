@@ -94,6 +94,37 @@ header > nav > svg:hover {
 .icon-cnt {
   display: flex;
 }
+form {
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 5px;
+}
+form > .searchInput {
+  background: transparent;
+  height: 2.5rem;
+  padding: 1rem;
+  font-family: "Karla", sans-serif;
+  font-size: 1.2rem;
+  color: #e8eef3;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid #e8eef3;
+  outline: none;
+}
+form > .searchInput::placeholder {
+  color: #e8eef3;
+}
+form > .searchBtn {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  margin-left: -20px;
+  color: #0588f8;
+}
+form > .searchBtn > svg {
+  font-size: 1.9rem;
+}
 @font-face {
   font-family: OpenWeatherIcons;
   src: url("./fonts/OpenWeatherIcons.eot");
