@@ -20,8 +20,7 @@ body {
 }
 header {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 header > nav > svg {
@@ -54,7 +53,7 @@ header > nav > svg:hover {
   color: var(--tertiary-color);
 }
 .city {
-  max-width: 20rem;
+  width: 15rem;
   font-family: var(--main-font);
   font-weight: 800;
   font-size: 3em;
@@ -95,17 +94,17 @@ header > nav > svg:hover {
   display: flex;
 }
 form {
-  background-color: var(--secondary-color);
-  padding: 1rem;
+  background-color: #0587f84b;
+  padding: 0.5rem;
   border-radius: 5px;
 }
 form > .searchInput {
-  background: transparent;
+  background: none;
   height: 2.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   font-family: "Karla", sans-serif;
   font-size: 1.2rem;
-  color: #e8eef3;
+  color: #fdfdfd;
   border-top: none;
   border-right: none;
   border-left: none;
@@ -120,10 +119,10 @@ form > .searchBtn {
   border: none;
   padding: 5px;
   margin-left: -20px;
-  color: #0588f8;
 }
 form > .searchBtn > svg {
   font-size: 1.9rem;
+  color: #0587f883;
 }
 @font-face {
   font-family: OpenWeatherIcons;
@@ -295,5 +294,29 @@ form > .searchBtn > svg {
   .wrapper {
     justify-content: space-evenly;
     align-items: center;
+  }
+}
+
+/* smaller screen */
+@media screen and (max-width: 380px) {
+  form {
+    width: 10rem;
+    padding: 3px;
+  }
+  form > .searchInput {
+    background: none;
+    padding: 3px;
+  }
+  form > .searchBtn {
+    display: none;
+  }
+  .city {
+    font-size: 2em;
+  }
+  .degree {
+    font-size: 2.5em;
+  }
+  .desc {
+    font-size: 1.5em;
   }
 }
